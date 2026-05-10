@@ -10,6 +10,7 @@ import {
   Code,
   Share2,
   Settings,
+  FileCode2,
 } from "lucide-react";
 
 const routes = [
@@ -42,6 +43,12 @@ const routes = [
     icon: Share2,
     href: "/dashboard/preview",
     color: "text-emerald-500",
+  },
+  {
+    label: "Technical Generators",
+    icon: FileCode2,
+    href: "/dashboard/technical",
+    color: "text-amber-500",
   },
   {
     label: "Settings",

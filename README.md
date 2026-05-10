@@ -15,13 +15,18 @@ Easily construct complex Schema.org structured data types to earn Rich Results i
 ### 3. Technical SEO Audit Tool
 Analyze any public URL instantly for SEO health.
 - Uses server-side HTML fetching and `cheerio` parsing to evaluate technical SEO factors.
-- Checks include: `<title>` length/presence, meta description, H1 tags, canonical tags, Image Alt tags, Open Graph tags, and JSON-LD presence.
+- Checks include: `<title>` length/presence, meta description, H1 tags, heading sequence validity, canonical tags, Image Alt tags, Open Graph tags, and JSON-LD presence.
 - Calculates an aggregate score out of 100 with actionable feedback.
 
 ### 4. Social Preview Tool
 Visualize how your links will look when shared across the web.
 - Input title, description, and OG image.
 - Live, pixel-perfect mockups for **Google Search**, **Twitter Cards**, and **Facebook / LinkedIn** links.
+
+### 5. Technical Config Generators
+Quickly scaffold standard SEO configuration files for crawlers.
+- **Sitemap Generator**: Create valid XML sitemaps with dynamic URL lists, Last Modified dates, Change Frequencies, and Priorities.
+- **Robots.txt Generator**: Construct custom user-agent rules, `Allow`/`Disallow` paths, and global sitemap declarations.
 
 ---
 
