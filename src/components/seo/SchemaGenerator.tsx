@@ -15,7 +15,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Copy, Check, Plus, Trash } from "lucide-react";
+import { Copy, Check, Plus, Trash, ExternalLink } from "lucide-react";
 
 export function SchemaGenerator() {
   const [schemaType, setSchemaType] = useState("Article");
@@ -329,10 +329,16 @@ export function SchemaGenerator() {
             <CardTitle>JSON-LD Output</CardTitle>
             <CardDescription>Inject this script into your page head.</CardDescription>
           </div>
-          <Button variant="outline" size="sm" onClick={copyToClipboard}>
-            {copied ? <Check className="h-4 w-4 mr-2 text-green-500" /> : <Copy className="h-4 w-4 mr-2" />}
-            {copied ? "Copied" : "Copy Script"}
-          </Button>
+          <div className="flex space-x-2">
+            <Button variant="outline" size="sm" onClick={() => window.open("https://search.google.com/test/rich-results", "_blank")}>
+              <ExternalLink className="mr-2 h-4 w-4" />
+              Test in Rich Results
+            </Button>
+            <Button variant="outline" size="sm" onClick={copyToClipboard}>
+              {copied ? <Check className="h-4 w-4 mr-2 text-green-500" /> : <Copy className="h-4 w-4 mr-2" />}
+              {copied ? "Copied" : "Copy Script"}
+            </Button>
+          </div>
         </CardHeader>
         <CardContent className="flex-1">
           <Tabs defaultValue="json" className="w-full h-full flex flex-col">

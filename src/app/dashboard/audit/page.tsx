@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Loader2, CheckCircle2, XCircle, AlertCircle, Search } from "lucide-react";
+import { Loader2, CheckCircle2, XCircle, AlertCircle, Search, ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const formSchema = z.object({
@@ -128,8 +128,16 @@ export default function AuditPage() {
           </Card>
 
           <Card>
-            <CardHeader>
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle>Audit Results</CardTitle>
+              <Button 
+                variant="outline" 
+                size="sm" 
+                onClick={() => window.open(`https://pagespeed.web.dev/analysis?url=${encodeURIComponent(auditData.url)}`, "_blank")}
+              >
+                <ExternalLink className="mr-2 h-4 w-4" />
+                Lighthouse Recommendations
+              </Button>
             </CardHeader>
             <CardContent>
               <div className="space-y-4">

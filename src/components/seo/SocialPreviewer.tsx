@@ -7,6 +7,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Form, FormControl, FormField, FormItem, FormLabel } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { ExternalLink } from "lucide-react";
 
 export function SocialPreviewer() {
   const form = useForm({
@@ -132,7 +134,7 @@ export function SocialPreviewer() {
 
           <TabsContent value="facebook" className="mt-4">
             <Card>
-              <CardContent className="p-6 flex justify-center">
+              <CardContent className="p-6 flex flex-col items-center">
                 <div className="w-[500px] border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1E1E1E] font-sans">
                   {values.imageUrl ? (
                     <div className="w-full h-[260px] bg-slate-100 dark:bg-slate-800 border-b border-gray-200 dark:border-gray-700 relative overflow-hidden">
@@ -156,6 +158,17 @@ export function SocialPreviewer() {
                     </div>
                   </div>
                 </div>
+                {values.url && (
+                  <div className="mt-6 flex w-[500px] justify-end">
+                    <Button 
+                      variant="outline" 
+                      onClick={() => window.open(`https://developers.facebook.com/tools/debug/?q=${encodeURIComponent(values.url)}`, "_blank")}
+                    >
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Test in Facebook Debugger
+                    </Button>
+                  </div>
+                )}
               </CardContent>
             </Card>
           </TabsContent>

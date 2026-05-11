@@ -153,3 +153,8 @@ export const metadata = {
     images: ["/og-image.jpg"]
   }
 }
+Add:
+
+Facebook debugger validator
+Google Rich Results validator
+Lighthouse recommendations
